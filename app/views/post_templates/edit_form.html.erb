@@ -1,0 +1,20 @@
+<h1>
+  Edit post #<%= @post.id %>
+</h1>
+
+<hr>
+
+<!-- Form post start -->
+<form action="/update_post/<%= @post.id %>" method="post">
+<!-- Form post end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update post
+  </button>
+</form>
+
+<hr>
+
+<a href="/posts">
+  Go back
+</a>
