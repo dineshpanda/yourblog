@@ -11,44 +11,34 @@
         </a>
       </div>
 
-      <!-- Edit link article start -->
       <div class="col">
         <a href="/articles/<%= @article.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit article
         </a>
       </div>
-      <!-- Edit link article end -->
 
-      <!-- Delete link article start -->
       <div class="col">
         <a href="/delete_article/<%= @article.id %>" class="btn btn-block btn-outline-secondary">
           Delete article
         </a>
       </div>
-      <!-- Delete link article end -->
     </div>
 
     <dl>
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@article.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@article.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
