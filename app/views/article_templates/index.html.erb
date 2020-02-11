@@ -29,6 +29,14 @@
         </th>
 
         <th>
+          User
+        </th>
+
+        <th>
+          Title
+        </th>
+
+        <th>
           Created at
         </th>
 
@@ -44,6 +52,18 @@
       <tr>
         <td>
           <%= article.id %>
+        </td>
+
+        <td>
+          <% if article.user.present? %>
+            <a href="/users/<%= article.user.id %>">
+              <%= article.user.first_name %>
+            </a>
+          <% end %>
+        </td>
+
+        <td>
+          <%= article.title %>
         </td>
 
         <td>
