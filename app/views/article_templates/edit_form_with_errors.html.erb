@@ -14,6 +14,22 @@
 
 <form action="/update_article/<%= @article.id %>" method="post">
 
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :first_name, @article.user_id), :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <label for="title">
+      Title
+    </label>
+
+    <input type="text" id="title" name="title" class="form-control" value="<%= @article.title %>">
+  </div>
+
   <button class="btn btn-block btn-outline-secondary">
     Update article
   </button>

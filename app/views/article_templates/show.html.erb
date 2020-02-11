@@ -26,6 +26,24 @@
 
     <dl>
       <dt>
+        User
+      </dt>
+      <dd>
+        <% if @article.user.present? %>
+          <a href="/users/<%= @article.user_id %>">
+            <%= @article.user.first_name %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Title
+      </dt>
+      <dd>
+        <%= @article.title %>
+      </dd>
+
+      <dt>
         Created at
       </dt>
       <dd>
