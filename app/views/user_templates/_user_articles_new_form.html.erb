@@ -1,0 +1,16 @@
+<form action="/create_article_from_user" method="post">
+
+  <input type="hidden" name="user_id" value="<%= @user.id %>">
+
+  <div class="form-group">
+    <label for="title">
+      Title
+    </label>
+
+    <input type="text" id="title" name="title" class="form-control" value="<%= @article.title %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create article
+  </button>
+</form>
