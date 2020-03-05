@@ -21,6 +21,9 @@ class ArticlesController < ApplicationController
   def create_row
     @article = Article.new
 
+    @article.title = params.fetch("title")
+    @article.subtitle = params.fetch("subtitle")
+    @article.content = params.fetch("content")
 
     if @article.valid?
       @article.save
@@ -40,6 +43,9 @@ class ArticlesController < ApplicationController
   def update_row
     @article = Article.find(params.fetch("id_to_modify"))
 
+    @article.title = params.fetch("title")
+    @article.subtitle = params.fetch("subtitle")
+    @article.content = params.fetch("content")
 
     if @article.valid?
       @article.save

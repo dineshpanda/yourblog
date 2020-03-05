@@ -1,5 +1,34 @@
-<%= search_form_for @q, :class => collapse_search_form, :id => "posts_filters" do |f| %>
+<%= search_form_for @q, :class => collapse_search_form, :id => "comments_filters" do |f| %>
   <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :article_id, "Article" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :article_id_gteq, :class => "form-control", :placeholder => "Article greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :article_id_lteq, :class => "form-control", :placeholder => "Article less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :price, "Price" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :price_gteq, :class => "form-control", :placeholder => "Price greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :price_lteq, :class => "form-control", :placeholder => "Price less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :desc_cont, "Desc contains" %>
+    <%= f.text_field :desc_cont, :class => "form-control", :placeholder => "Desc contains" %>
+  </div>
 
   <div class="form-group">
     <%= f.label :created_at, "Created at" %>
@@ -46,10 +75,10 @@
 
   <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
 
-  <a href="/posts" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+  <a href="/comments" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
 
 <% end %>
 
-<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#posts_filters">
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#comments_filters">
   Show filters
 </a>

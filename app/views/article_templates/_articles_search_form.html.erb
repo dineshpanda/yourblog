@@ -2,6 +2,21 @@
   <p class="lead">Narrow results:</p>
 
   <div class="form-group">
+    <%= f.label :title_cont, "Title contains" %>
+    <%= f.text_field :title_cont, :class => "form-control", :placeholder => "Title contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :content_cont, "Content contains" %>
+    <%= f.text_field :content_cont, :class => "form-control", :placeholder => "Content contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :subtitle_cont, "Subtitle contains" %>
+    <%= f.text_field :subtitle_cont, :class => "form-control", :placeholder => "Subtitle contains" %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :created_at, "Created at" %>
     <div class="row">
       <div class='col-md-6 mb-1'>
