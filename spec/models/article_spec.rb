@@ -11,6 +11,6 @@ RSpec.describe Article, type: :model do
     end
 
     describe "Validations" do
-      
+
     end
 end
