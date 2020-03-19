@@ -1,12 +1,13 @@
 class ArticlesController < ApplicationController
   def index
     @q = Article.ransack(params[:q])
-    @articles = @q.result(:distinct => true).page(params[:page]).per(10)
+    @articles = @q.result(:distinct => true).includes(:comments).page(params[:page]).per(10)
 
     render("article_templates/index.html.erb")
   end
 
   def show
+    @comment = Comment.new
     @article = Article.find(params.fetch("id_to_display"))
 
     render("article_templates/show.html.erb")
@@ -21,6 +22,12 @@ class ArticlesController < ApplicationController
   def create_row
     @article = Article.new
 
+    @article.title = params.fetch("title")
+    @article.content = params.fetch("content")
+    @article.published = params.fetch("published")
+    @article.rating = params.fetch("rating")
+    @article.publish_date = params.fetch("publish_date")
+    @article.publish_time = params.fetch("publish_time")
 
     if @article.valid?
       @article.save
@@ -40,6 +47,12 @@ class ArticlesController < ApplicationController
   def update_row
     @article = Article.find(params.fetch("id_to_modify"))
 
+    @article.title = params.fetch("title")
+    @article.content = params.fetch("content")
+    @article.published = params.fetch("published")
+    @article.rating = params.fetch("rating")
+    @article.publish_date = params.fetch("publish_date")
+    @article.publish_time = params.fetch("publish_time")
 
     if @article.valid?
       @article.save
