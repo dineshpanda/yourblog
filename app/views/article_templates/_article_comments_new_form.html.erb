@@ -1,0 +1,31 @@
+<form action="/create_comment_from_article" method="post">
+
+  <div class="form-group">
+    <label for="valid">
+      Valid
+    </label>
+    <input id="valid" class="form-check-input" name="valid" type="checkbox" <%= "checked" if @comment.valid %>>
+  </div>
+
+  <div class="form-group">
+    <label for="auto_removal_date">
+      Auto removal date
+    </label>
+
+    <input type="text" id="auto_removal_date" name="auto_removal_date" class="form-control" value="<%= @comment.auto_removal_date %>">
+  </div>
+
+  <div class="form-group">
+    <label for="auto_removal_time">
+      Auto removal time
+    </label>
+
+    <input type="text" id="auto_removal_time" name="auto_removal_time" class="form-control" value="<%= @comment.auto_removal_time %>">
+  </div>
+
+  <input type="hidden" name="article_id" value="<%= @article.id %>">
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create comment
+  </button>
+</form>

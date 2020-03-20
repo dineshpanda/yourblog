@@ -1,6 +1,6 @@
-ActiveAdmin.register Post do
+ActiveAdmin.register Comment do
 
- permit_params 
+ permit_params :valid, :auto_removal_date, :auto_removal_time, :article_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
